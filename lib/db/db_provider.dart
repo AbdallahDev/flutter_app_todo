@@ -57,10 +57,6 @@ class DbProvider {
 
   deleteTodo(int id) async {
     Database db = await database;
-    await db.delete(
-      todoTable,
-      where: idColumn + " = ?",
-      whereArgs: [id],
-    );
+    await db.delete(todoTable, where: idColumn + " = ?", whereArgs: [id]);
   }
 }
